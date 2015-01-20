@@ -1,0 +1,36 @@
+alignment top_left
+background no
+border_width 1
+cpu_avg_samples 2
+default_color grey
+default_outline_color white
+default_shade_color white
+draw_borders no
+draw_graph_borders yes
+draw_outline no
+draw_shades no
+use_xft yes
+xftfont monospace
+gap_x 40
+gap_y 150
+net_avg_samples 2
+no_buffers yes
+out_to_console no
+out_to_stderr no
+extra_newline no
+own_window yes
+own_window_class Conky
+own_window_type desktop
+#own_window_transparent no
+own_window_colour 303030
+stippled_borders 0
+double_buffer yes
+update_interval 600.0
+uppercase no
+use_spacer none
+show_graph_scale no
+show_graph_range no
+text_buffer_size 1024
+
+TEXT
+${pre_exec cal -m3}

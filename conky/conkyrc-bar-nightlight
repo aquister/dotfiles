@@ -1,0 +1,48 @@
+alignment top_left
+background no
+border_width 1
+cpu_avg_samples 2
+default_color blue
+color0 grey
+color1 yellow
+default_outline_color white
+default_shade_color white
+draw_borders no
+draw_graph_borders yes
+draw_outline no
+draw_shades no
+use_xft yes
+xftfont bauhause:size=8
+gap_x 5
+gap_y 0
+minimum_size 1270 0
+net_avg_samples 2
+no_buffers yes
+out_to_console no
+out_to_stderr no
+extra_newline no
+own_window yes
+own_window_class Conky
+own_window_type desktop
+own_window_transparent no
+own_window_colour 303030
+stippled_borders 0
+double_buffer yes
+update_interval 1.0
+uppercase no
+use_spacer none
+show_graph_scale no
+show_graph_range no
+
+TEXT
+| ${color1}${time}${color} \
+| ${color0}CPU: ${color1}${cpu}% ${execi 15 sensors | grep "Core" | head -1 | cut -b 16-17}C${color} \
+| ${color0}RAM: ${color1}${mem}${color} \
+| ${color0}HDD: ${color1}${hddtemp}C${color} \
+| ${color0}Master: ${color1}${execi 10 amixer get Master | grep "Front Left:" | awk '{print $5}'}${color0} \
+PCM: ${color1}${execi 10 amixer get PCM | grep "Front Left:" | awk '{print $5}'}${color} \
+| ${color0}Brightness: ${color1}${execi 10 cat /sys/class/backlight/acpi_video0/brightness}${color} \
+| ${color0}Battery: ${color1}${battery C1AC}${color} \
+| ${color1}${execi 2 /usr/bin/dropbox status}${color} \
+| ${color0}WLAN: ${color1}${wireless_essid wlan0} ${wireless_bitrate wlan0} ${wireless_link_qual_perc wlan0}%${color} \
+| ${color0}Down: ${color1}${downspeed wlan0} ${color0}Up: ${color1}${upspeed wlan0}${color} |

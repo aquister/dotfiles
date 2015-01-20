@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openbox_menu xmlns="http://openbox.org/4.3/menu">
+
+  <menu id="more" label="More">
+    <item label="Terminator">
+      <action name="Execute">
+        <command>terminator</command>
+      </action>
+    </item>
+    <item label="Skype">
+      <action name="Execute">
+        <command>skype</command>
+      </action>
+    </item>
+    <item label="Spotify">
+      <action name="Execute">
+        <command>spotify</command>
+      </action>
+    </item>
+    <item label="NetBeans">
+      <action name="Execute">
+        <command>netbeans</command>
+      </action>
+    </item>
+    <item label="Eclipse">
+      <action name="Execute">
+        <command>eclipse</command>
+      </action>
+    </item>
+    <item label="LibreOffice">
+      <action name="Execute">
+        <command>libreoffice</command>
+      </action>
+    </item>
+    <item label="GIMP">
+      <action name="Execute">
+        <command>gimp</command>
+      </action>
+    </item>
+  </menu>
+
+  <menu id="root-menu" label="Openbox 3">
+    <item label="Firefox">
+      <action name="Execute">
+        <command>firefox</command>
+      </action>
+    </item>
+    <item label="Terminal">
+      <action name="Execute">
+        <command>xfce4-terminal</command>
+      </action>
+    </item>
+    <item label="Xterm">
+      <action name="Execute">
+        <command>xterm -bg black -fg green -cr purple +cm +dc -geometry 140x40</command>
+      </action>
+    </item>
+    <item label="Thunar">
+      <action name="Execute">
+        <command>thunar</command>
+      </action>
+    </item>
+    <item label="Chromium">
+      <action name="Execute">
+        <command>chromium</command>
+      </action>
+    </item>
+    <item label="KeePassX">
+      <action name="Execute">
+        <command>keepassx</command>
+      </action>
+    </item>
+    <item label="XChat">
+      <action name="Execute">
+        <command>xchat</command>
+      </action>
+    </item>
+    <item label="Transmission">
+      <action name="Execute">
+        <command>transmission-gtk</command>
+      </action>
+    </item>
+    <menu id="more" />
+    <separator />
+    <item label="NRK P3">
+      <action name="Execute">
+        <command>vlc http://lyd.nrk.no/nrk_radio_p3_mp3_h</command>
+      </action>
+    </item>
+    <separator />
+    <item label="Log Out">
+      <action name="Exit">
+        <promt>yes</promt>
+      </action>
+    </item>
+  </menu>
+</openbox_menu>
