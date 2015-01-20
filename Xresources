@@ -36,24 +36,27 @@
 ! URxvt*cursorUnderline:    boolean
 ! URxvt*cursorBlink:        boolean
 ! URxvt*pointerBlank:       boolean
-! URxvt*background:         color
-! URxvt*foreground:         color
-! URxvt*color0:             color
-! URxvt*color1:             color
-! URxvt*color2:             color
-! URxvt*color3:             color
-! URxvt*color4:             color
-! URxvt*color5:             color
-! URxvt*color6:             color
-! URxvt*color7:             color
-! URxvt*color8:             color
-! URxvt*color9:             color
-! URxvt*color10:            color
-! URxvt*color11:            color
-! URxvt*color12:            color
-! URxvt*color13:            color
-! URxvt*color14:            color
-! URxvt*color15:            color
+! Background color
+URxvt*background: black
+! Font color
+URxvt*foreground: white
+! Other colors
+URxvt*color0: black
+URxvt*color1: red3
+URxvt*color2: green3
+URxvt*color3: yellow3
+URxvt*color4: blue2
+URxvt*color5: magenta3
+URxvt*color6: cyan3
+URxvt*color7: gray90
+URxvt*color8: grey50
+URxvt*color9: red
+URxvt*color10: green
+URxvt*color11: yellow
+URxvt*color12: blue
+URxvt*color13: magenta
+URxvt*color14: cyan
+URxvt*color15: white
 ! URxvt*colorBD:            color
 ! URxvt*colorIT:            color
 ! URxvt*colorUL:            color
