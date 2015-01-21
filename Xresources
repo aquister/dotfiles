@@ -10,7 +10,7 @@
 ! URxvt*skipScroll:         boolean
 ! URxvt*pastableTabs:       boolean
 ! URxvt*scrollstyle:        mode
-! URxvt*scrollBar:          boolean
+URxvt*scrollBar: false
 ! URxvt*scrollBar_right:    boolean
 ! URxvt*scrollBar_floating: boolean
 ! URxvt*scrollBar_align:    mode
@@ -74,8 +74,8 @@ URxvt*color15: white
 ! URxvt*path:               search path
 ! URxvt*backgroundPixmap:   file[;geom]
 ! URxvt*iconFile:           file
-! URxvt*font:               fontname
-! URxvt*boldFont:           fontname
+URxvt.font:     xft:bitstream vera sans mono:size=11:antialias=true
+URxvt.boldFont: xft:bitstream vera sans mono:bold:size=11:antialias=true
 ! URxvt*italicFont:         fontname
 ! URxvt*boldItalicFont:     fontname
 ! URxvt*intensityStyles:    boolean
