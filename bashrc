@@ -30,8 +30,9 @@ alias irc='gaxy -t "screen -r irssi"'
 alias p3='mplayer http://lyd.nrk.no/nrk_radio_p3_mp3_h'
 alias playflash='cd /tmp && get_flash_videos --play --player vlc --quality medium --quiet'
 
-alias mkprojrapp='cd /home/lan/public_html/hovedoppgave/Forprosjekt && \
-    pdflatex -halt-on-error -output-directory Out Main.tex'
+alias mkprojrapp='pdflatex -halt-on-error -output-directory Out Main.tex'
+alias mkprojrapploop='cd /home/lan/public_html/hovedoppgave/Forprosjekt && \
+while true; do inotifywait -e close_write *; mkprojrapp; done'
 
 ## Functions
 
