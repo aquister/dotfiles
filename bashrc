@@ -30,11 +30,25 @@ alias irc='gaxy -t "screen -r irssi"'
 alias p3='mplayer http://lyd.nrk.no/nrk_radio_p3_mp3_h'
 alias playflash='cd /tmp && get_flash_videos --play --player vlc --quality medium --quiet'
 
-alias mkprojrapp='pdflatex -halt-on-error -output-directory Out Main.tex'
-alias mkprojrapploop='cd /home/lan/public_html/hovedoppgave/Forprosjekt && \
-while true; do inotifywait -e close_write *; mkprojrapp; done'
+alias mkprojrapp='pdflatex -halt-on-error -output-directory Out rapport.tex'
+
 
 ## Functions
+
+
+mkprojrapploop () {
+    cd "/home/lan/public_html/hovedoppgave/Fase I"
+    while true; do
+        inotifywait -e close_write *;
+        mkprojrapp;
+        if [ $? == 0 ]; then
+            echo -e "\n--- SUCCESS ---\n"
+        else
+            echo -e "\n--- FAILURE ---\n"
+        fi
+    done
+}
+
 
 ## Print memory usage for applications using more than 1 MB of memory
 memuse () {
