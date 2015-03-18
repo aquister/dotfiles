@@ -27,20 +27,23 @@ alias reddit='/home/lan/Dropbox/scripts/reddit.py'
 alias wlan='/home/lan/Dropbox/scripts/wlanConn.sh'
 alias gaxy='ssh -p 551 lan@home.ostekake.com'
 alias irc='gaxy -t "screen -r irssi"'
-alias p3='mplayer http://lyd.nrk.no/nrk_radio_p3_mp3_h'
 alias playflash='cd /tmp && get_flash_videos --play --player vlc --quality medium --quiet'
 
-alias mkprojrapp='pdflatex -halt-on-error -output-directory Out rapport.tex'
+alias nrk-p3='mplayer http://lyd.nrk.no/nrk_radio_p3_aac_h'
+alias nrk-mp3='mplayer http://lyd.nrk.no/nrk_radio_mp3_aac_h'
+alias nrk-p13='mplayer http://lyd.nrk.no/nrk_radio_p13_aac_h'
+
+alias mkprojrapp='pdflatex -halt-on-error -output-directory Out'
 
 
 ## Functions
 
 
 mkprojrapploop () {
-    cd "/home/lan/public_html/hovedoppgave/Fase I"
+    cd $1
     while true; do
         inotifywait -e close_write *;
-        mkprojrapp;
+        mkprojrapp $2;
         if [ $? == 0 ]; then
             echo -e "\n--- SUCCESS ---\n"
         else
