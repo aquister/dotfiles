@@ -5,6 +5,11 @@
 ## If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
 PS1='[\u@\h:\w]\n\$ '
 export HISTCONTROL=ignoredups   # Don't put duplicate lines in the history.
 export EDITOR='vim'
@@ -28,25 +33,8 @@ alias nrk-p3='mplayer http://lyd.nrk.no/nrk_radio_p3_aac_h'
 alias nrk-mp3='mplayer http://lyd.nrk.no/nrk_radio_mp3_aac_h'
 alias nrk-p13='mplayer http://lyd.nrk.no/nrk_radio_p13_aac_h'
 
-alias mkprojrapp='pdflatex -halt-on-error -output-directory Out'
-
 
 ## Functions
-
-
-mkprojrapploop () {
-  cd $1
-  while true; do
-    inotifywait -e close_write *;
-    mkprojrapp $2;
-    if [ $? == 0 ]; then
-      echo -e "\n--- SUCCESS ---\n"
-    else
-      echo -e "\n--- FAILURE ---\n"
-    fi
-  done
-}
-
 
 ## Print memory usage for applications using more than 1 MB of memory
 memuse () {
