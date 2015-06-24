@@ -13,8 +13,8 @@ dir=~/dotfiles
 olddir=~/dotfiles_old
 
 # list of files/folders to symlink in homedir
-files="bash_logout bash_profile bashrc config/htop/htoprc livestreamerrc vimrc xinitrc \
-Xresources xmonad/xmonad.hs gitconfig tmux.conf"
+files="bash_logout bash_profile bashrc livestreamerrc vimrc xinitrc \
+Xresources xmonad/xmonad.hs gitconfig tmux.conf weechat/weechat.conf weechat/irc.conf"
 
 ##########
 
@@ -35,3 +35,4 @@ for file in $files; do
     echo "Creating symlink to $file in home directory."
     ln -s $dir/$file ~/.$file
 done
+
