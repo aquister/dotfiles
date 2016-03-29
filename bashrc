@@ -12,8 +12,13 @@ fi
 
 PS1='[\u@\h:\w]\n\$ '
 export HISTCONTROL=ignoredups   # Don't put duplicate lines in the history.
+export HISTFILESIZE=1000000
+export HISTSIZE=1000000
+
 export EDITOR='vim'
 export BROWSER='firefox'
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export BEAKER_destroy='no'
 
 ## Aliases
 alias rm='rm -i'
@@ -33,8 +38,29 @@ alias nrk-p3='mplayer http://lyd.nrk.no/nrk_radio_p3_aac_h'
 alias nrk-mp3='mplayer http://lyd.nrk.no/nrk_radio_mp3_aac_h'
 alias nrk-p13='mplayer http://lyd.nrk.no/nrk_radio_p13_aac_h'
 
+alias strfind='find . -type f | xargs grep'
+alias dockerclean='docker stop $(docker ps -aq) && docker rm $(docker ps -aq)'
+alias pacbackfiles='find / -regextype posix-extended -regex ".+\.pac(new|save|orig)" 2> /dev/null'
+
 
 ## Functions
+
+dockerconn() {
+  local port=$(docker port $(docker ps -lq) | awk -F: {'print $2'})
+  echo $port
+  sshpass -p 'root' ssh -p $port root@localhost
+}
+
+dockerdebug() {
+  for container in $(docker ps -q); do
+    port=$(docker port $container | awk -F: {'print $2'});
+    cmd="sshpass -p 'root' ssh -p $port root@localhost"
+    tmux split-window "$cmd"
+    tmux select-layout tiled
+  done
+  exit
+}
+
 
 ## Print memory usage for applications using more than 1 MB of memory
 memuse () {
