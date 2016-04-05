@@ -1,7 +1,7 @@
 ! URxvt*rxvt-unicode (urxvt) v9.15 - released: 2012-01-21
 ! URxvt*options: perl,xft,styles,combining,blink,iso14755,unicode3,encodings=eu+vn+jp+jp-ext+kr+zh+zh-ext,fade,transparent,tint,pixbuf,XIM,frills,selectionscrolling,wheel,slipwheel,smart-resize,cursorBlink,pointerBlank,scrollbars=plain+rxvt+NeXT+xterm
 ! URxvt*Usage: urxvt [options] [-e command args]
-! URxvt*termName:           string
+URxvt*termName: screen-256color
 ! URxvt*geometry:           geometry
 ! URxvt*chdir:              string
 ! URxvt*reverseVideo:       boolean
