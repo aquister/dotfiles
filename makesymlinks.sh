@@ -13,8 +13,8 @@ dir=~/dotfiles
 olddir=~/dotfiles_old
 
 # list of files/folders to symlink in homedir
-files="bash_logout bash_profile bashrc livestreamerrc vimrc xinitrc rtorrent.rc \
-Xresources xmonad/xmonad.hs gitconfig tmux.conf weechat/weechat.conf weechat/irc.conf"
+files="bash_logout bash_profile bashrc livestreamerrc vimrc xinitrc \
+config Xresources gitconfig tmux.conf weechat rpmmacros rtorrent.rc"
 
 ##########
 
