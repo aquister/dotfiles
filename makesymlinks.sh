@@ -1,10 +1,4 @@
 #!/bin/bash
-############################
-# .make.sh
-# This script creates symlinks from the home directory to any desired dotfiles in ~/dotfiles
-############################
-
-########## Variables
 
 # dotfiles directory
 dir=~/dotfiles
@@ -13,8 +7,10 @@ dir=~/dotfiles
 olddir=~/dotfiles_old
 
 # list of files/folders to symlink in homedir
-files="bash_logout bash_profile bashrc livestreamerrc vimrc xinitrc \
-config Xresources gitconfig tmux.conf weechat rpmmacros rtorrent.rc"
+files="config weechat \
+bash_logout bash_profile bashrc git-prompt.sh gitconfig \
+livestreamerrc vimrc rtorrent.rc rpmmacros \
+xinitrc Xresources tmux.conf"
 
 ##########
 
