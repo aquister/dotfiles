@@ -5,13 +5,11 @@
 ## If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# Source global definitions
-if [ -f /etc/bashrc ]; then
-	. /etc/bashrc
-fi
+[[ -s "/usr/share/git/git-prompt.sh" ]] && source "/usr/share/git/git-prompt.sh"
 
-PS1='[\u@\h:\w]\n\$ '
-export HISTCONTROL=ignoredups   # Don't put duplicate lines in the history.
+PS1='\[\033[0;32m\]\[\033[0m\033[0;32m\]\u\[\033[0;36m\] @ \[\033[0;36m\]\h \w\[\033[0;32m\]$(__git_ps1)\n\[\033[0;32m\]└─\[\033[0m\033[0;32m\] \$\[\033[0m\033[0;32m\] ▶\[\033[0m\] '
+
+export HISTCONTROL=ignoredups
 export HISTFILESIZE=1000000
 export HISTSIZE=1000000
 
@@ -32,35 +30,25 @@ alias pgrep="pgrep -l"
 alias df='df -hT'
 alias du='du -h -c'
 alias free='free -m' 
-alias playflash='cd /tmp && get_flash_videos --play --player vlc --quality medium --quiet'
+
+alias strfind='find . -type f | xargs grep'
+alias pacbackfiles='find / -regextype posix-extended -regex ".+\.pac(new|save|orig)" 2> /dev/null'
+alias dockerclean='docker stop $(docker ps -aq) && docker rm $(docker ps -aq)'
 
 alias nrk-p3='mplayer http://lyd.nrk.no/nrk_radio_p3_aac_h'
 alias nrk-mp3='mplayer http://lyd.nrk.no/nrk_radio_mp3_aac_h'
 alias nrk-p13='mplayer http://lyd.nrk.no/nrk_radio_p13_aac_h'
-
-alias strfind='find . -type f | xargs grep'
-alias dockerclean='docker stop $(docker ps -aq) && docker rm $(docker ps -aq)'
-alias pacbackfiles='find / -regextype posix-extended -regex ".+\.pac(new|save|orig)" 2> /dev/null'
+alias playflash='cd /tmp && get_flash_videos --play --player vlc --quality medium --quiet'
 
 
 ## Functions
 
-dockerconn() {
-  local port=$(docker port $(docker ps -lq) | awk -F: {'print $2'})
-  echo $port
-  sshpass -p 'root' ssh -p $port root@localhost
-}
-
 dockerdebug() {
   for container in $(docker ps -q); do
-    port=$(docker port $container | awk -F: {'print $2'});
-    cmd="sshpass -p 'root' ssh -p $port root@localhost"
-    tmux split-window "$cmd"
-    tmux select-layout tiled
+    urxvt --hold -e docker exec -ti $container /bin/bash &
   done
   exit
 }
-
 
 ## Print memory usage for applications using more than 1 MB of memory
 memuse () {
@@ -88,23 +76,5 @@ extract () {
   else
     echo "'$1' is not a valid file"
   fi
-}
-
-## remindme - a simple reminder
-## e.g.: remindme 10m "omg, the pizza"
-remindme() {
-  sleep $1 && notify-send -t 0 "$2" &
-}
-
-## Set USB Mouse Acceleration
-## e.g.: setusbmouseaccel 5
-setusbmouseaccel() {
-  ACCEL=4
-  if [ $1 ]; then
-    ACCEL=$1
-  fi
-  xinput --set-prop "USB Mouse" "Device Accel Constant Deceleration" $ACCEL
-  xinput --set-prop "Microsoft Microsoft 5-Button Mouse with IntelliEye(TM)" \
-    "Device Accel Constant Deceleration" $ACCEL
 }
 
