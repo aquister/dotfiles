@@ -26,10 +26,12 @@ alias ls='ls --tabsize=0 --literal --color=auto --show-control-chars \
   --human-readable --group-directories-first'
 alias mkdir='mkdir -p -v'
 alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
 alias pgrep="pgrep -l"
 alias df='df -hT'
 alias du='du -h -c'
-alias free='free -m' 
+alias free='free -m'
+alias wget='wget --content-disposition'
 
 alias strfind='find . -type f | xargs grep'
 alias pacbackfiles='find / -regextype posix-extended -regex ".+\.pac(new|save|orig)" 2> /dev/null'
