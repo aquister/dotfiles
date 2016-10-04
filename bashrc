@@ -22,8 +22,7 @@ export BEAKER_destroy='no'
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
-alias ls='ls --tabsize=0 --literal --color=auto --show-control-chars \
-  --human-readable --group-directories-first'
+alias ls='ls -l --tabsize=0 --literal --color=auto --show-control-chars --human-readable --group-directories-first'
 alias mkdir='mkdir -p -v'
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
@@ -42,8 +41,15 @@ alias nrk-mp3='mplayer http://lyd.nrk.no/nrk_radio_mp3_aac_h'
 alias nrk-p13='mplayer http://lyd.nrk.no/nrk_radio_p13_aac_h'
 alias playflash='cd /tmp && get_flash_videos --play --player vlc --quality medium --quiet'
 
+alias xrset='xrandr --output eDP1 --off --output DP1 --mode 3840x2160 --rate 60 --scale 0.8x0.8 --output HDMI3 --auto --right-of DP1'
 
 ## Functions
+
+i3name() {
+  NUM=$(i3-msg -t get_workspaces | jq '.[] | select(.focused==true).num')
+  NAME=$(i3-msg -t get_workspaces | jq '.[] | select(.focused==true).name')
+  i3-msg "rename workspace ${NAME} to $NUM:$@"
+}
 
 dockerdebug() {
   for container in $(docker ps -q); do
