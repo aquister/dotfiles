@@ -43,7 +43,7 @@ alias nrk-mp3='mplayer http://lyd.nrk.no/nrk_radio_mp3_aac_h'
 alias nrk-p13='mplayer http://lyd.nrk.no/nrk_radio_p13_aac_h'
 alias playflash='cd /tmp && get_flash_videos --play --player vlc --quality medium --quiet'
 
-alias xrset='xrandr --output eDP1 --off --output DP1 --mode 3840x2160 --rate 60 --scale 0.8x0.8 --output HDMI3 --auto --right-of DP1'
+alias ethdump='sudo tcpdump -nn -v -i ens9 -s 1500 -c 1 "ether[20:2] == 0x2000"'
 
 ## Functions
 
