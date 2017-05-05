@@ -20,7 +20,7 @@ set smarttab        " When on, a <Tab> in front of a line inserts blanks
  
 set showcmd         " Show (partial) command in status line.
 
-set relativenumber  " Show relative line numbers.
+set number          " Show line numbers
 
 set showmatch       " When a bracket is inserted, briefly jump to the matching
                     " one. The jump is only done if the match can be seen on the
