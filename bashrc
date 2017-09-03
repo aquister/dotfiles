@@ -37,6 +37,7 @@ alias wget='wget --content-disposition'
 alias strfind='find . -type f | xargs grep'
 alias pacbackfiles='find / -regextype posix-extended -regex ".+\.pac(new|save|orig)" 2> /dev/null'
 alias dockerclean='docker stop $(docker ps -aq) && docker rm $(docker ps -aq)'
+alias dockerpurge='dockerclean; docker volume rm $(docker volume ls -q); docker rmi $(docker images -q)'
 
 alias nrk-p3='mplayer http://lyd.nrk.no/nrk_radio_p3_aac_h'
 alias nrk-mp3='mplayer http://lyd.nrk.no/nrk_radio_mp3_aac_h'
