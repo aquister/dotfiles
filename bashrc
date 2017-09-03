@@ -47,6 +47,18 @@ alias ethdump='sudo tcpdump -nn -v -i ens9 -s 1500 -c 1 "ether[20:2] == 0x2000"'
 
 ## Functions
 
+puppyloop() {
+  CONF_DIR=/etc/puppetlabs/code/environments/production/
+  MANIFEST=/etc/puppetlabs/code/environments/production/manifests/site.pp 
+  while true
+    do inotifywait -r $CONF_DIR -e close_write && clear && sudo /opt/puppetlabs/bin/puppet apply $MANIFEST
+  done
+}
+
+yamlcheck() {
+  ruby -e "require 'yaml'; YAML.load_file('$1')"
+}
+
 i3name() {
   NUM=$(i3-msg -t get_workspaces | jq '.[] | select(.focused==true).num')
   NAME=$(i3-msg -t get_workspaces | jq '.[] | select(.focused==true).name')
