@@ -5,3 +5,8 @@
 	editor = vim
 [push]
 	default = simple
+	followTags = true
+[pull]
+	rebase = true
+[rebase]
+  autostash = true
