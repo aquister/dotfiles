@@ -1,18 +1,13 @@
-##
-## ~/.bashrc
-##
+#!/bin/bash
 
 ## If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# Source global definitions
-if [ -f /etc/bashrc ]; then
-	. /etc/bashrc
-fi
-
-[ -r /usr/share/bash-completion/bash_completion ] && . /usr/share/bash-completion/bash_completion
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-source ~/.git-prompt.sh
+[[ -r /etc/bashrc ]] && source /etc/bashrc # Source global definitions
+[[ -r /usr/share/bash-completion/bash_completion ]] && source /usr/share/bash-completion/bash_completion
+[[ -r "$HOME/.git-prompt.sh" ]] && source "$HOME/.git-prompt.sh"
+[[ -r "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+[[ -r "$HOME/.bashrc_cisco" ]] && source "$HOME/.bashrc_cisco"
 
 PS1='\[\033[0;32m\]\[\033[0m\033[0;32m\]\u\[\033[0;36m\] @ \[\033[0;36m\]\h \w\[\033[0;32m\]$(__git_ps1)\n\[\033[0;32m\]└─\[\033[0m\033[0;32m\] (\$? = $?)\[\033[0m\033[0;32m\] ▶\[\033[0m\] '
 
@@ -23,7 +18,7 @@ export HISTSIZE=1000000
 export EDITOR='vim'
 export BROWSER='firefox'
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-export BEAKER_destroy='no'
+export BEAKER_destroy='yes'
 
 ## Aliases
 alias rm='rm -i'
@@ -49,7 +44,7 @@ alias nrk-mp3='mplayer http://lyd.nrk.no/nrk_radio_mp3_aac_h'
 alias nrk-p13='mplayer http://lyd.nrk.no/nrk_radio_p13_aac_h'
 alias playflash='cd /tmp && get_flash_videos --play --player vlc --quality medium --quiet'
 
-alias ethdump='sudo tcpdump -nn -v -i ens9 -s 1500 -c 1 "ether[20:2] == 0x2000"'
+alias ethdump='sudo tcpdump -nn -v -i enp0s25 -s 1500 -c 1 "ether[20:2] == 0x2000"'
 
 ## Functions
 
