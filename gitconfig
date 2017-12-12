@@ -1,12 +1,14 @@
 [user]
-	name = aquister
-	email = alec90@gmail.com
+  name = aquister
+  email = alec90@gmail.com
 [core]
-	editor = vim
+  editor = vim
 [push]
-	default = simple
-	followTags = true
+  default = simple
+  followTags = true
 [pull]
-	rebase = true
+  rebase = true
 [rebase]
   autostash = true
+[log]
+  decorate = auto
