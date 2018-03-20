@@ -45,6 +45,7 @@ alias nrk-p13='mplayer http://lyd.nrk.no/nrk_radio_p13_aac_h'
 alias playflash='cd /tmp && get_flash_videos --play --player vlc --quality medium --quiet'
 
 alias ethdump='sudo tcpdump -nn -v -i enp0s25 -s 1500 -c 1 "ether[20:2] == 0x2000"'
+alias pubip='dig +short myip.opendns.com @resolver1.opendns.com'
 
 ## Functions
 
