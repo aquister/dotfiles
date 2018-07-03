@@ -1,0 +1,11 @@
+[Unit]
+Description=Get latest DNS zone blacklist for unbound
+Requires=unbound.service
+After=unbound.service
+ConditionPathExists=/etc/unbound/unbound.conf.d
+
+[Service]
+Type=oneshot
+WorkingDirectory=/etc/unbound/unbound.conf.d
+StandardOutput=journal
+ExecStart=/bin/sh -c '/home/aquister/scripts/unbound-blacklist-renew.sh'
