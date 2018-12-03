@@ -74,8 +74,8 @@ URxvt*color15: white
 ! URxvt*path:               search path
 ! URxvt*backgroundPixmap:   file[;geom]
 ! URxvt*iconFile:           file
-URxvt.font:     xft:bitstream vera sans mono:size=11:antialias=true
-URxvt.boldFont: xft:bitstream vera sans mono:bold:size=11:antialias=true
+URxvt.font:     xft:bitstream vera sans mono:size=12:antialias=true
+URxvt.boldFont: xft:bitstream vera sans mono:bold:size=12:antialias=true
 ! URxvt*italicFont:         fontname
 ! URxvt*boldItalicFont:     fontname
 ! URxvt*intensityStyles:    boolean
