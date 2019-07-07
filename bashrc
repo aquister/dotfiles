@@ -9,7 +9,7 @@
 [[ -r "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 [[ -r "$HOME/.bashrc_cisco" ]] && source "$HOME/.bashrc_cisco"
 
-PS1='\e[1;34m(\\$? = $?)\e[m \e[1;32m\u\e[m @ \e[1;36m\h\e[m \e[1;32m\w\e[m\e[0;34m$(__git_ps1)\e[m \$ '
+PS1='[\t] \e[1;34m(\\$? = $?)\e[m \e[1;32m\u\e[m @ \e[1;36m\h\e[m \e[1;32m\w\e[m\e[0;34m$(__git_ps1)\e[m \$ '
 
 export HISTCONTROL=ignoredups
 export HISTFILESIZE=1000000
