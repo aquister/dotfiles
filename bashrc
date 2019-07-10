@@ -8,6 +8,7 @@
 [[ -r "$HOME/.git-prompt.sh" ]] && source "$HOME/.git-prompt.sh"
 [[ -r "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 [[ -r "$HOME/.bashrc_cisco" ]] && source "$HOME/.bashrc_cisco"
+[[ -r "$HOME/.bashrc_macos" ]] && source "$HOME/.bashrc_macos"
 
 GREEN="\[\033[40;0;32m\]"
 BLUE="\[\033[40;0;34m\]"
