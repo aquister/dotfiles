@@ -1,1 +1,2 @@
 source "$(brew --prefix)/etc/bash_completion"
+PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
