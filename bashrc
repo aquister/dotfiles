@@ -9,7 +9,14 @@
 [[ -r "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 [[ -r "$HOME/.bashrc_cisco" ]] && source "$HOME/.bashrc_cisco"
 
-PS1='[\t] \e[1;34m(\\$? = $?)\e[m \e[1;32m\u\e[m @ \e[1;36m\h\e[m \e[1;32m\w\e[m\e[0;34m$(__git_ps1)\e[m \$ '
+GREEN="\[\033[40;0;32m\]"
+BLUE="\[\033[40;0;34m\]"
+LTGRAY="\[\033[40;1;30m\]"
+LTGREEN="\[\033[40;1;32m\]"
+LTBLUE="\[\033[40;1;34m\]"
+LTCYAN="\[\033[40;1;36m\]"
+CLEAR="\[\033[0m\]"
+PS1="$LTGRAY(\$?) $GREEN[\t] $LTBLUE\u$GREEN@$LTCYAN\h$LTGREEN \w$BLUE\$(__git_ps1)$CLEAR \\$ "
 
 export HISTCONTROL=ignoredups
 export HISTFILESIZE=1000000
