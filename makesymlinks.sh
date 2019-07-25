@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # dotfiles directory
 dir=~/dotfiles
@@ -12,9 +12,9 @@ filelist=(
   git-prompt.sh
   gitconfig
   vimrc
-  rpmmacros
+  # rpmmacros
   tmux.conf
-  livestreamerrc
+  # livestreamerrc
   rtorrent.rc
   # config/i3/config
   # weechat
