@@ -40,6 +40,7 @@ alias pgrep="pgrep -l"
 alias df='df -hT'
 alias du='du -h -c'
 alias free='free -m'
+alias mount='mount | column -t'
 alias wget='wget --content-disposition'
 
 alias strfind='find . -type f | xargs grep'
